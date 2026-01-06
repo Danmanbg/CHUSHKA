@@ -14,7 +14,11 @@ Right-click the first file (CHUSHKA.zip.001) → 7-Zip → Extract Here
 7-Zip will automatically read all the other parts and recreate the original zip content.
 Open the solution in Visual Studio 2022.
 Restore NuGet packages.
-Configure the database connection.
+Apply migrations:
+
+Add-Migration InitialCreate
+Update-Database
+
 Run the project with F5 or IIS Express.
 Tech
 .NET Core / Razor Pages
