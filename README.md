@@ -19,4 +19,4 @@ Entity Framework
 SQL Server
 Visual Studio 2022
 Links
-Repository:
+Repository: https://github.com/Danmanbg/CHUSHKA
