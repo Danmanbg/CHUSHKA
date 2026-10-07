@@ -1,0 +1,50 @@
+﻿@model IEnumerable<CHUSHKA.Models.Product>
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>Welcome to CHUSHKA</h1>
+<p>Buy great products.</p>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+
+<table class="table table-bordered table-striped mt-3">
+    <thead>
+        <link rel="stylesheet" href="~/css/styles.css" />
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            var shortDescription = p.Description != null && p.Description.Length > 50
+            ? p.Description.Substring(0, 50) + "..."
+            : p.Description;
+
+            <tr>
+                <td>@p.Name</td>
+                <td>@shortDescription</td>
+                <td>@p.Type</td>
+                <td>@p.Price.ToString("F2")</td>
+                <td>
+                    <a asp-controller="Products" asp-action="Details" asp-route-id="@p.Id" class="btn btn-info">Details</a>
+                    @if (User.IsInRole("User"))
+                    {
+                        <form method="post" asp-action="Order" asp-route-id="@p.Id" style="display:inline">
+                            <button type="submit" class="btn btn-success">Order</button>
+                        </form>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

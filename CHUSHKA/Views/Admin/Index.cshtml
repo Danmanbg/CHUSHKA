@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CHUSHKA.Models.Product>
+
+<h2>Admin – Products</h2>
+
+<a class="btn btn-success mb-3" asp-action="Create">Add New Product</a>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <link rel="stylesheet" href="~/css/styles.css" />
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var product in Model)
+        {
+            var shortDescription = product.Description != null && product.Description.Length > 50
+            ? product.Description.Substring(0, 50) + "..."
+            : product.Description;
+
+            <tr>
+                <td>@product.Name</td>
+                <td>@shortDescription</td>
+                <td>@product.Type</td>
+                <td>@product.Price.ToString("F2")</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@product.Id">Edit</a>
+                    <a class="btn btn-warning btn-sm" asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+                    <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@product.Id">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

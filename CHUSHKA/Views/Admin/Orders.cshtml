@@ -1,0 +1,25 @@
+﻿@model IEnumerable<CHUSHKA.Models.Order>
+
+<h2>All Orders</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <link rel="stylesheet" href="~/css/styles.css" />
+        <tr>
+            <th>Product</th>
+            <th>Client</th>
+            <th>Ordered On</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>@order.Product.Name</td>
+                <td>@order.Client.UserName</td>
+                <td>@order.OrderedOn.ToString("yyyy-MM-dd HH:mm")</td>
+            </tr>
+        }
+    </tbody>
+</table>

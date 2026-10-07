@@ -1,0 +1,148 @@
+﻿/* === GLOBAL COLORS / VARIABLES === */
+:root {
+    --chushka-red: #d11149;
+    --chushka-red-dark: #b10e3f;
+    --text-dark: #333;
+    --text-light: #fff;
+    --link-blue: #1e5bbf;
+    --background: #ffffff;
+}
+
+/* === RESET === */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--text-dark);
+}
+
+/* === TOP NAVIGATION BAR === */
+.navbar-chushka {
+    width: 100%;
+    background: var(--chushka-red);
+    padding: 12px 20px;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+}
+
+    .navbar-chushka .brand {
+        font-size: 20px;
+        font-weight: bold;
+        margin-right: 30px;
+    }
+
+    .navbar-chushka a {
+        color: var(--text-light);
+        margin-right: 15px;
+        text-decoration: none;
+        font-size: 15px;
+    }
+
+        .navbar-chushka a:hover {
+            text-decoration: underline;
+        }
+
+/* === MAIN CONTENT BOX === */
+.content-box {
+    margin: 25px auto;
+    padding: 25px 30px;
+    background: var(--chushka-red);
+    color: var(--text-light);
+    border-radius: 6px;
+    width: 95%;
+    max-width: 1200px;
+}
+
+    .content-box h1 {
+        margin-bottom: 15px;
+    }
+
+    .content-box hr {
+        border: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        margin: 15px 0;
+    }
+
+    .content-box a {
+        color: #b3e0ff;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+        .content-box a:hover {
+            text-decoration: underline;
+        }
+
+/* === TABLE STYLE (IF INDEX HAS A TABLE) === */
+.table {
+    width: 95%;
+    max-width: 1200px;
+    margin: 15px auto;
+    border-collapse: collapse;
+    background: #f9f9f9;
+}
+
+    .table th {
+        background: var(--chushka-red);
+        color: white;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+    }
+
+/* === BUTTONS === */
+.btn-info {
+    background: var(--link-blue);
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+    .btn-info:hover {
+        background: #154a96;
+    }
+
+.btn-success {
+    background: #2e9e4d;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+    .btn-success:hover {
+        background: #257c3e;
+    }
+
+/* === FOOTER === */
+.footer-chushka {
+    width: 100%;
+    background: var(--chushka-red);
+    color: white;
+    text-align: center;
+    padding: 14px;
+    position: relative;
+    bottom: 0;
+    margin-top: 40px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+    .navbar-chushka {
+        flex-wrap: wrap;
+    }
+
+    .content-box {
+        padding: 15px 20px;
+    }
+}
